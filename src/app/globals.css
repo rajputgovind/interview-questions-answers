@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0a0e1a;
+  --color-foreground: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-primary: #3b82f6;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
+  color: var(--color-foreground);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.4);
+  color: #fff;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-glow {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+}
+
+.prose-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+
+.prose-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #cbd5e1;
+}
+
+.prose-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-content li {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.prose-content code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: #22d3ee;
+}
+
+.code-block {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.code-block pre {
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #e6edf3;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
